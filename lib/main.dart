@@ -9,10 +9,41 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        appBar: AppBar(
+          title: Text("App test"),
+          backgroundColor: Colors.deepPurple,
+          foregroundColor: Colors.white,
+          centerTitle: true,
+        ),
+        body: Container(
+          margin: EdgeInsets.all(50),
+          padding: EdgeInsets.all(50),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Contenido",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red,
+                ),
+              ),
+              ElevatedButton(onPressed: () {
+                print("Hola mundo");
+              }, child: Text("Guardar")),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Row 1"),
+                  Text("Row 2"),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
